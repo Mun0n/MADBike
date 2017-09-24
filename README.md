@@ -11,11 +11,9 @@
 
 ## Installation
 
-- Copy [BiciMAD/Supporting Files/GoogleService-Info-Sample.plist](https://github.com/alexruperez/MADBike/blob/master/BiciMAD/Supporting%20Files/GoogleService-Info-Sample.plist) to BiciMAD/Supporting Files/GoogleService-Info.plist location and fill your own keys.
+- Fill you own key of openweather.com in the build.gradle
 
-- Copy [BiciMAD/Supporting Files/Info-Sample.plist](https://github.com/alexruperez/MADBike/blob/master/BiciMAD/Supporting%20Files/Info-Sample.plist) to BiciMAD/Supporting Files/Info.plist location and fill your own keys.
-
-- Use [orta](https://github.com/orta)/[cocoapods-keys](https://github.com/orta/cocoapods-keys#alternative-usage) to fill your own keys. Get your EMT keys from [here](http://opendata.emtmadrid.es/Formulario.aspx) and your MADBike keys from [here](https://www.madbikeapp.com/users/sign_up).
+- Get your EMT keys from [here](http://opendata.emtmadrid.es/Formulario.aspx) and your MADBike keys from [here](https://www.madbikeapp.com/users/sign_up).
 
 ## Etc.
 
