@@ -4,6 +4,8 @@
 [![Twitter](https://img.shields.io/badge/contact-@drmunon-0FABFF.svg?style=flat)](http://twitter.com/drmunon)
 [![GitHub Issues](http://img.shields.io/github/issues/Mun0n/MADBike.svg?style=flat)](http://github.com/Mun0n/MADBike/issues)
 
+[![PlayStore](https://www.madbikeapp.com/images/en-play-badge-300x89.png)](https://play.google.com/store/apps/details?id=org.drunkcode.madbike)
+
 ## Requirements
 
 - Android 4.0.3 or higher
@@ -20,6 +22,7 @@
 ## Etc.
 
 * Contributions are very welcome.
+* Check out [iOS version](https://github.com/alexruperez/MADBike) by [alexruperez](https://github.com/alexruperez)!
 
 ## Authors
 
