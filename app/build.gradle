@@ -1,0 +1,94 @@
+ext{
+    androidSupportVersion = "24.2.1"
+    androidPlayServicesVersion = "9.6.1"
+}
+
+apply plugin: 'com.android.application'
+
+repositories {
+    maven { url "https://jitpack.io" }
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 232
+        versionName "2.3.0"
+        resValue "string", "url_base", "http://helena.bonopark.es:16080/app/app/functions"
+        resValue "string", "weather_url", "http://api.openweathermap.org/data/2.5"
+        resValue "string", "weather_images_url", "http://openweathermap.org/img/w/"
+        resValue "string", "pollution_url", "https://madbike.herokuapp.com"
+        resValue "string", "emt_url_single_station", "https://rbdata.emtmadrid.es:8443/BiciMad/get_single_station/WEB.SERV.alex@drunkcode.org/3C9624AF-CEEF-45BD-AC30-E0FE5663B2EE"
+        resValue "string", "email_madbike", "javi@drunkcode.org"
+        resValue "string", "token_madbike", "4AeUTqRoixc9wMM_wCkM"
+        resValue "string", "key_weather", "[FILL_YOUR_OWN_TOKEN_FROM_OPENWEATHER]"
+
+        manifestPlaceholders = [onesignal_app_id: "FILL_YOUR_OWN_APP_ID_FROM_ONE_SIGNAL",
+                                onesignal_google_project_number: "FILL_YOUR_OWN_PROJECT_NUMBER"]
+    }
+
+    productFlavors {
+        debugFlavor {
+            applicationId "org.drunkcode.madbike"
+            resValue "string", "app_name", "MADBike_DEV"
+        }
+        releaseFlavor {
+            applicationId "org.drunkcode.madbike"
+            resValue "string", "app_name", "MADBike"
+
+        }
+    }
+    signingConfigs {
+        release {
+
+        }
+    }
+    buildTypes {
+        debug {
+            buildConfigField "Boolean", "DEBUG_MODE", "true"
+
+            debuggable true
+            minifyEnabled false
+        }
+        release {
+            buildConfigField "Boolean", "DEBUG_MODE", "false"
+            signingConfig signingConfigs.release
+            debuggable false
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:'+ androidSupportVersion
+    compile 'com.android.support:design:' + androidSupportVersion
+    compile 'com.android.support:preference-v14:' + androidSupportVersion
+    compile 'com.android.support:preference-v7:' + androidSupportVersion
+    compile 'com.google.android.gms:play-services-location:' + androidPlayServicesVersion
+    compile 'com.google.android.gms:play-services-maps:' + androidPlayServicesVersion
+    compile 'com.google.android.gms:play-services-places:' + androidPlayServicesVersion
+    compile 'com.google.firebase:firebase-messaging:' + androidPlayServicesVersion
+    compile 'com.google.maps.android:android-maps-utils:0.4.4'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.okhttp:okhttp:2.2.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.jakewharton:butterknife:6.1.0'
+    compile 'de.greenrobot:eventbus:2.4.0'
+    compile 'com.github.cmc00022:easyrecycleradapters:1.0.6'
+    compile 'com.github.PhilJay:MPAndroidChart:v2.1.5'
+    compile 'com.karumi:dexter:2.2.1'
+    compile 'com.onesignal:OneSignal:3.4.1'
+    compile 'com.facebook.android:facebook-android-sdk:4.17.0'
+    compile 'io.branch.sdk.android:library:1.+'
+
+    compile('com.twitter.sdk.android:twitter:1.12.1@aar') {
+        transitive = true;
+    }
+}

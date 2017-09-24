@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/preferences_general">
+
+        <SwitchPreferenceCompat
+            android:id="@+id/activeSwitch"
+            android:key="active_switch"
+            android:title="@string/screen_active" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferences_unity">
+
+        <ListPreference
+            android:id="@+id/degreesList"
+            android:defaultValue="ºC"
+            android:dialogTitle="@string/select_unity"
+            android:entries="@array/degrees_names"
+            android:entryValues="@array/degrees_values"
+            android:key="degrees_list"
+            android:summary="@string/degrees_summary"
+            android:title="@string/degrees_title" />
+
+        <ListPreference
+            android:id="@+id/distanceList"
+            android:defaultValue="m"
+            android:dialogTitle="@string/select_unity"
+            android:entries="@array/distance_names"
+            android:entryValues="@array/distance_values"
+            android:key="distance_list"
+            android:summary="@string/distance_summary"
+            android:title="@string/distance_title" />
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferences_pushes">
+
+        <SwitchPreferenceCompat
+            android:id="@+id/importantPushSwitch"
+            android:defaultValue="true"
+            android:key="important_switch"
+            android:title="@string/push_important_info" />
+
+        <SwitchPreferenceCompat
+            android:id="@+id/unavailablePushSwitch"
+            android:defaultValue="true"
+            android:key="unavailable_switch"
+            android:title="@string/push_unavailable" />
+
+        <SwitchPreferenceCompat
+            android:id="@+id/availablePushSwitch"
+            android:defaultValue="true"
+            android:key="available_switch"
+            android:title="@string/push_available" />
+
+        <SwitchPreferenceCompat
+            android:id="@+id/newStationsPushSwitch"
+            android:defaultValue="true"
+            android:key="new_stations_switch"
+            android:title="@string/push_new_stations" />
+
+        <SwitchPreferenceCompat
+            android:id="@+id/airQualityAlertsPushSwitch"
+            android:defaultValue="true"
+            android:key="air_quality_switch"
+            android:title="@string/push_air_quality_alerts" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

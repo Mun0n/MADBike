@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/firstMenuGroup"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_map"
+            android:title="@string/map_stations" />
+
+        <item
+            android:id="@+id/nav_air"
+            android:icon="@drawable/ic_cloud_black"
+            android:title="@string/air" />
+
+        <item
+            android:id="@+id/nav_fav"
+            android:icon="@drawable/ic_favorite"
+            android:title="@string/fav_station" />
+
+        <item
+            android:id="@+id/nav_send_incidence"
+            android:icon="@drawable/ic_warning"
+            android:title="@string/send_incidence" />
+
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@drawable/ic_new_news"
+            android:title="@string/news" />
+
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_contact"
+            android:title="@string/contact" />
+
+        <item
+            android:id="@+id/nav_proposals"
+            android:icon="@drawable/ic_proposals"
+            android:title="@string/proposals" />
+    </group>
+    <group
+        android:id="@+id/secondMenuGroup"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/settings" />
+
+
+        <item
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/ic_bike"
+            android:title="@string/about_us" />
+    </group>
+</menu>

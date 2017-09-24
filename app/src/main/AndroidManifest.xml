@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.drunkcode.madbike">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".MADBikeApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.home.activity.HomeActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.BrandedLaunch">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="madbike" />
+                <data android:host="home" />
+                <data android:host="madbike" />
+
+            </intent-filter>
+
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:host="madbike.app.link"
+                    android:scheme="https"/> <!-- live_app_alpha_encoded_id can be obtained from the Branch Dashboard here: https://dashboard.branch.io/#/settings/link -->
+
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.login.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/LoginStyle"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.register.RegisterActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.profile.activity.ProfileActivity"
+            android:configChanges="orientation|screenSize" />
+
+        <activity android:name=".ui.search.activity.SearchActivity" />
+
+        <activity
+            android:name=".ui.favorite.activity.FavoriteActivity"
+            android:configChanges="orientation|screenSize" />
+
+        <activity
+            android:name=".ui.favorite.activity.AlarmActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.station.activity.StationActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="[[FILL_YOUR_OWN_KEY]]" />
+
+        <meta-data
+            android:name="io.branch.sdk.BranchKey"
+            android:value="[[FILL_YOUR_OWN_KEY]]" />
+
+        <receiver
+            android:name="io.branch.referral.InstallListener"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <meta-data
+            android:name="com.onesignal.NotificationOpened.DEFAULT"
+            android:value="DISABLE" />
+
+        <receiver android:name="org.drunkcode.madbike.utils.AlarmReceiver" />
+
+    </application>
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+</manifest>

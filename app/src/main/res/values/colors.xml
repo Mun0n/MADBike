@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryDark">#00695C</color>
+    <color name="colorAccent">#305CAC</color>
+    <color name="gray">#616161</color>
+    <color name="gray_trasparent">#BB616161</color>
+    <color name="maps_button_bg">#B3FFFFFF</color>
+    <color name="maps_button_bg_dark">#B9E0E0E0</color>
+    <color name="centerColor">#80CBC4</color>
+    <color name="gray_chart">#F5F5F5</color>
+    <color name="red_chart">#FF5252</color>
+    <color name="green_chart">#81C784</color>
+    <color name="yellow_dark">#FFEB3B</color>
+</resources>

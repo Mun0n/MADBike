@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="degrees_names">
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
+    </string-array>
+    <string-array name="distance_names">
+        <item>Meters</item>
+        <item>Miles</item>
+    </string-array>
+    <string-array name="degrees_values">
+        <item>ºC</item>
+        <item>ºF</item>
+    </string-array>
+    <string-array name="distance_values">
+        <item>m</item>
+        <item>mill</item>
+    </string-array>
+    <string-array name="states_values">
+        <item>Open Spaces</item>
+        <item>Bikes</item>
+        <item>Not Active</item>
+    </string-array>
+</resources>
