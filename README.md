@@ -13,6 +13,8 @@
 
 - Fill you own key of openweather.com in the build.gradle
 
+- Find FILL_YOUR_OWN in all the code and fill the keys of Facebook, Branch, OneSignal, Twitter... have fun!
+
 - Get your EMT keys from [here](http://opendata.emtmadrid.es/Formulario.aspx) and your MADBike keys from [here](https://www.madbikeapp.com/users/sign_up).
 
 ## Etc.
