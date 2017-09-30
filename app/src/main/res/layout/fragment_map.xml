@@ -125,4 +125,15 @@
         android:layout_height="wrap_content"
         android:visibility="gone"/>
 
+    <Spinner
+        android:id="@+id/mapTypeSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:background="@drawable/button_map"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/reloadButton"
+        android:layout_toRightOf="@+id/reloadButton"
+        android:layout_toEndOf="@+id/reloadButton"
+        android:elevation="6dp"/>
+
 </RelativeLayout>
