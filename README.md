@@ -24,6 +24,12 @@
 * Contributions are very welcome.
 * Check out [iOS version](https://github.com/alexruperez/MADBike) by [alexruperez](https://github.com/alexruperez)!
 
+## Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/drunkcode#backer)]
+
+<a href="https://opencollective.com/drunkcode#backers" target="_blank"><img src="https://opencollective.com/drunkcode/backers.svg?width=890"></a>
+
 ## Authors
 
 [mun0n](https://github.com/mun0n), javi@drunkcode.org
