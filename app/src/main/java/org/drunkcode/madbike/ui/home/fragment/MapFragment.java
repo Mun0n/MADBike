@@ -34,9 +34,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -161,6 +164,8 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback, Map
     private ArrayList<FavoriteItem> favList;
     private CompositePermissionListener locationPermissionListener;
     private MultiplePermissionsListener cameraPermissionListener;
+    protected List mapTypeValuesList;
+    private Spinner mapTypeSpinner;
 
     private Location userLocation;
     LocationListener locationListener = new LocationListener() {
@@ -310,9 +315,42 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback, Map
         map.setOnMarkerClickListener(clusterManager);
     }
 
+    private void setUpMapTypeMenu(final GoogleMap googleMap) {
+        mapTypeSpinner = (Spinner) getActivity().findViewById(R.id.mapTypeSpinner);
+        String[] mapTypeValues = getContext().getResources().getStringArray(R.array.map_type_values);
+        mapTypeValuesList = Arrays.asList(mapTypeValues);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                getContext(),
+                android.R.layout.simple_spinner_dropdown_item,
+                mapTypeValuesList);
+        mapTypeSpinner.setAdapter(arrayAdapter);
+
+        mapTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                switch (position) {
+                    case 0:
+                        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                        break;
+                    case 1:
+                        googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                        break;
+                    case 2:
+                        googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+    }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         this.map = googleMap;
+        setUpMapTypeMenu(this.map);
         map.setInfoWindowAdapter(new BubbleAdapter(getActivity()));
         map.setOnInfoWindowClickListener(this);
         map.getUiSettings().setMapToolbarEnabled(false);
